@@ -3,6 +3,7 @@ from __future__ import print_function
 import os
 import numpy as np
 import matplotlib
+import lap
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
@@ -17,7 +18,6 @@ np.random.seed(0)
 
 def linear_assignment(cost_matrix):
     try:
-        import lap #linear assignment problem solver
         _, x, y = lap.lapjv(cost_matrix, extend_cost = True)
         return np.array([[y[i],i] for i in x if i>=0])
     except ImportError:
