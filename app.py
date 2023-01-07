@@ -35,7 +35,7 @@ hide_menu_style = """
 
 main_title = """
             <div>
-                <h1 style="color:black;
+                <h1 style="color:white;
                 font-size:35px;">
                 Traffic Flow</h1>
             </div>
@@ -81,7 +81,7 @@ def main():
         display_labels = True 
            
     weights = "yolov5n.pt"
-    device="gpu"
+    device="0"
 
     # ------------------------- LOCAL VIDEO ------------------------
     if input_source == "Video":
@@ -120,6 +120,7 @@ def main():
                    device="cpu",
                     classes=2,nosave=nosave, 
                     display_labels=display_labels)
+            
 
             inference_msg.success("Inference Complete!")
 
@@ -149,16 +150,17 @@ def main():
                             unsafe_allow_html=True)
                 kpi6_text = st.markdown("0")
             
+            
             detect(weights=weights, 
                    source="0",  
                    stframe=stframe, 
                    kpi5_text=kpi5_text,
                    kpi6_text = kpi6_text,
                    conf_thres=float(conf_thres),
-                   device="cpu",
+                   device="0",
                     classes=2,nosave=nosave, 
                     display_labels=display_labels)
-
+            
             inference_msg.success("Inference Complete!")
            
     # --------------------------------------------------------------       
