@@ -117,7 +117,7 @@ def main():
                    kpi5_text=kpi5_text,
                    kpi6_text = kpi6_text,
                    conf_thres=float(conf_thres),
-                   device="cpu",
+                   device=0,
                     classes=2,nosave=nosave, 
                     display_labels=display_labels)
             
@@ -157,7 +157,7 @@ def main():
                    kpi5_text=kpi5_text,
                    kpi6_text = kpi6_text,
                    conf_thres=float(conf_thres),
-                   device="0",
+                   device=0,
                     classes=2,nosave=nosave, 
                     display_labels=display_labels)
             
