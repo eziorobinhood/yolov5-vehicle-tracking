@@ -1,6 +1,6 @@
 import streamlit as st
 from obj_det_and_trk_streamlit import *
-
+import os
 #--------------------------------Web Page Designing------------------------------
 hide_menu_style = """
     <style>
@@ -123,7 +123,8 @@ def main():
             
 
             inference_msg.success("Inference Complete!")
-
+            mainreader(vid_path=os.path.basename(video), vid_out= "vid1.mp4")
+            print("OCR Completed")
 
 
     # ------------------------- LOCAL VIDEO ------------------------
